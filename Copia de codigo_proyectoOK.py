@@ -35,7 +35,7 @@ class MapaDemo(arcade.Window):
         self.limite=None
         self.naves=None
         #introducir mucica de fondo
-        self.musica = arcade.Sound ("/Users/Catalina/Desktop/proyecto.video/sonidos/sonidofondo.mp3.mp3", True)
+        self.musica = arcade.Sound ("/sonidos/sonidofondo.mp3.mp3", True)
         self.musica.play (volume = 0.5)
         
        
@@ -45,7 +45,7 @@ class GamePlay (arcade.View):
     def __init__(self):
         super().__init__()
         #introducir imagen inicio
-        self.texture = arcade.load_texture("/Users/Catalina/Desktop/proyecto.video/menu.jpeg")
+        self.texture = arcade.load_texture("/menu.jpeg")
         
         arcade.set_viewport(0, width - 1, 0, height - 1)
     def on_draw(self):
@@ -75,13 +75,13 @@ class Juego(arcade.View):
         arcade.start_render()
         self.naves= arcade.SpriteList()
         #dibujar
-        self.nave= arcade.Sprite("/Users/Catalina/Desktop/proyecto.video/1.png", scaling)
+        self.nave= arcade.Sprite("1.png", scaling)
         self.nave.center_y= 50
         self.nave.center_x= 100
         self.naves.append(self.nave)    
        
         #leer el mapa
-        self.map=arcade.tilemap.read_tmx("/Users/Catalina/Desktop/proyecto.video/MapaInfinito.tmx")
+        self.map=arcade.tilemap.read_tmx("/MapaInfinito.tmx")
         #carga de layers
         self.limite=arcade.SpriteList(use_spatial_hash=True)
         self.limite.extend( arcade.tilemap.process_layer(self.map, "limite"))
@@ -105,7 +105,7 @@ class Juego(arcade.View):
         # sonidos
         
         
-        self.sonido_disparo = arcade.Sound ("/Users/Catalina/Desktop/proyecto.video/sonidos/laser.wav.wav", False)
+        self.sonido_disparo = arcade.Sound ("/sonidos/laser.wav.wav", False)
         self.sonido_disparo.play(volume = 0.4)
    
     def on_draw(self):
@@ -197,13 +197,13 @@ class Juego2(arcade.View):
         arcade.start_render()
         self.naves= arcade.SpriteList()
         #dibujar
-        self.nave= arcade.Sprite("/Users/Catalina/Desktop/proyecto.video/1.png", scaling)
+        self.nave= arcade.Sprite("1.png", scaling)
         self.nave.center_y= 100
         self.nave.center_x= 100
         self.naves.append(self.nave)    
        
         #leer el mapa
-        self.map=arcade.tilemap.read_tmx("/Users/Catalina/Desktop/proyecto.video/MapaInfinito.tmx")
+        self.map=arcade.tilemap.read_tmx("/MapaInfinito.tmx")
         #carga de layers
         self.limite=arcade.SpriteList(use_spatial_hash=True)
         self.limite.extend( arcade.tilemap.process_layer(self.map, "limite"))
@@ -232,7 +232,7 @@ class Juego2(arcade.View):
         
         # sonidos
         
-        self.sonido_disparo = arcade.Sound ("/Users/Catalina/Desktop/proyecto.video/sonidos/laser.wav.wav", False)
+        self.sonido_disparo = arcade.Sound ("/sonidos/laser.wav.wav", False)
         self.sonido_disparo.play(volume = 0.4)
    
     def on_draw(self):
@@ -371,13 +371,13 @@ class Juego3(arcade.View):
         arcade.start_render()
         self.naves= arcade.SpriteList()
         #dibujar
-        self.nave= arcade.Sprite("/Users/Catalina/Desktop/proyecto.video/1.png", scaling)
+        self.nave= arcade.Sprite("1.png", scaling)
         self.nave.center_y= 100
         self.nave.center_x= 100
         self.naves.append(self.nave)    
        
         #leer el mapa
-        self.map=arcade.tilemap.read_tmx("/Users/Catalina/Desktop/proyecto.video/MapaInfinito.tmx")
+        self.map=arcade.tilemap.read_tmx("/MapaInfinito.tmx")
         #carga de layers
         self.limite=arcade.SpriteList(use_spatial_hash=True)
         self.limite.extend( arcade.tilemap.process_layer(self.map, "limite"))
@@ -406,7 +406,7 @@ class Juego3(arcade.View):
         
         # sonidos
         
-        self.sonido_disparo = arcade.Sound ("/Users/Catalina/Desktop/proyecto.video/sonidos/laser.wav.wav", False)
+        self.sonido_disparo = arcade.Sound ("/sonidos/laser.wav.wav", False)
         self.sonido_disparo.play(volume = 0.4)
    
     def on_draw(self):
@@ -540,7 +540,7 @@ class GameOver (arcade.View):
     def __init__(self):
         #ventana base
         super().__init__()
-        self.texture = arcade.load_texture("/Users/Catalina/Desktop/proyecto.video/game_over.jpeg")
+        self.texture = arcade.load_texture("/game_over.jpeg")
         
     def on_draw(self):
         arcade.start_render()
@@ -560,7 +560,7 @@ class GameOver2 (arcade.View):
     def __init__(self):
         #ventana base
         super().__init__()
-        self.texture = arcade.load_texture("/Users/Catalina/Desktop/proyecto.video/menu2.jpeg")
+        self.texture = arcade.load_texture("/menu2.jpeg")
         
     def on_draw(self):
         arcade.start_render()
@@ -581,7 +581,7 @@ class GameOver3 (arcade.View):
     def __init__(self):
         #ventana base
         super().__init__()
-        self.texture = arcade.load_texture("/Users/Catalina/Desktop/proyecto.video/menu3.jpeg")
+        self.texture = arcade.load_texture("/menu3.jpeg")
         
     def on_draw(self):
         arcade.start_render()
